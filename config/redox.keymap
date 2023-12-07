@@ -17,21 +17,21 @@
 
         default_layer {
             bindings = <
-&kp ESC                  &kp N1        &kp N2        &kp N3         &kp N4  &kp N5                                                                            &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp TAB                  &kp Q         &kp W         &kp E          &kp R   &kp T   &kp DELETE                                                 &kp DELETE     &kp Y   &kp U   &kp I      &kp O     &kp P     &kp MINUS
-&mt LEFT_CONTROL ESCAPE  &kp A         &kp S         &kp D          &kp F   &kp G   &kp LBKT                                                   &kp RBKT       &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT                &kp Z         &kp X         &kp C          &kp V   &kp B   &kp PG_UP   &kp PG_DN                 &kp HOME             &kp END        &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RET
-&kp LCTRL                &kp LEFT_GUI  &kp LEFT_ALT  &kp RIGHT_GUI  &mo 2           &kp SPACE   &mt LEFT_CONTROL ENTER    &mt LEFT_ALT ESCAPE  &kp BACKSPACE          &mo 1   &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
+&kp ESC                  &kp N1        &kp N2        &kp N3    &kp N4  &kp N5                                                                            &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp BSPC
+&kp TAB                  &kp Q         &kp W         &kp E     &kp R   &kp T   &kp DELETE                                                 &kp DELETE     &kp Y   &kp U   &kp I      &kp O     &kp P     &kp MINUS
+&mt LEFT_CONTROL ESCAPE  &kp A         &kp S         &kp D     &kp F   &kp G   &kp LBKT                                                   &kp RBKT       &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+&kp LSHFT                &kp Z         &kp X         &kp C     &kp V   &kp B   &kp PG_UP   &kp PG_DN                 &kp HOME             &kp END        &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RET
+&kp LCTRL                &kp LEFT_GUI  &kp LEFT_ALT  &kp LGUI  &mo 2           &kp SPACE   &mt LEFT_CONTROL ENTER    &mt LEFT_ALT ESCAPE  &kp BACKSPACE          &mo 1   &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
             >;
         };
 
         right_layer {
             bindings = <
-&kp TILDE      &kp F1           &kp F2           &kp F3            &kp F4             &kp F5                                                                      &kp F6      &kp F7         &kp F8            &kp F9                &kp F10                &kp DELETE
-&kp GRAVE      &kp EXCLAMATION  &kp AT           &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                                               &kp F12  &kp CARET   &kp AMPERSAND  &kp STAR          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DELETE
-&mt LCTRL TAB  &kp PLUS         &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp K_MUTE                                            &trans   &kp LEFT    &kp DOWN       &kp UP            &kp RIGHT             &kp PIPE               &kp ENTER
-&trans         &kp INSERT       &kp PRINTSCREEN  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &kp C_VOLUME_UP          &kp C_VOLUME_DOWN    &trans  &trans   &kp C_PREV  &kp C_NEXT     &kp C_PLAY_PAUSE  &kp UNDERSCORE        &kt BACKSLASH          &trans
-&trans         &trans           &trans           &trans            &kp MINUS                       &mt LEFT_ALT UNDERSCORE  &trans               &trans  &trans               &trans         &kp HOME          &kp PAGE_DOWN         &kp PAGE_UP            &kp END
+&kp GRAVE      &kp F1           &kp F2     &kp F3            &kp F4             &kp F5                                                              &kp F6      &kp F7         &kp F8            &kp F9                &kp F10                &kp DELETE
+&kp TILDE      &kp EXCLAMATION  &kp AT     &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                                       &kp F12  &kp CARET   &kp AMPERSAND  &kp STAR          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DELETE
+&mt LCTRL TAB  &kp PLUS         &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                                      &kp END  &kp LEFT    &kp DOWN       &kp UP            &kp RIGHT             &kp PIPE               &kp ENTER
+&trans         &kp INSERT       &kp MINUS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &kp C_VOLUME_UP  &kp C_VOLUME_DOWN    &trans  &trans   &kp C_PREV  &kp C_NEXT     &kp C_PLAY_PAUSE  &kp PRINTSCREEN       &kt BACKSLASH          &trans
+&trans         &trans           &trans     &trans            &kp LALT                        &kp UNDERSCORE   &trans               &trans  &trans               &trans         &trans            &trans                &trans                 &trans
             >;
 
             label = "Right";
