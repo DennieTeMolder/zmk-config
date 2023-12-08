@@ -83,7 +83,7 @@
 &kp TILDE      &kp EXCL                  &kp AT     &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                     &kp F12  &kp CARET  &kp AMPERSAND      &kp STAR   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DELETE
 &mt LCTRL TAB  &kp PLUS                  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                    &kp END  &kp LEFT   &kp DOWN           &kp UP     &kp RIGHT             &kp ENTER              &kp LC(SPACE)
 &trans         &htnr PRINTSCREEN INSERT  &kp MINUS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &trans    &trans    &trans  &trans   &kp N0     &kp DOUBLE_QUOTES  &kp UNDER  &kp PIPE              &kp BACKSLASH          &kp LC(ENTER)
-&trans         &trans                    &trans     &to 2             &to 1                           &trans    &trans    &trans  &trans              &to 2              &trans     &trans                &trans                 &trans
+&trans         &trans                    &trans     &trans            &to 2                           &trans    &trans    &trans  &trans              &to 0              &trans     &trans                &trans                 &trans
             >;
 
             label = "OSL";
