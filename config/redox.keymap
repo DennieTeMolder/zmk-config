@@ -28,6 +28,20 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&sl>;
         };
+
+        td_f1_11: td_f1_11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance F1 F11";
+            #binding-cells = <0>;
+            bindings = <&kp F1>, <&kp F11>;
+        };
+
+        td_f2_12: td_f2_12 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance F2 F12";
+            #binding-cells = <0>;
+            bindings = <&kp F2>, <&kp F12>;
+        };
     };
 
     macros {
@@ -56,11 +70,11 @@
 
         numpad_layer {
             bindings = <
-&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                            &trans        &trans  &trans  &trans  &trans           &trans
-&kp CAPSLOCK  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &bt BT_CLR                                    &trans      &kp N6        &kp N7  &kp N8  &kp N9  &kp N0           &trans
-&trans        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &sys_reset                                    &sys_reset  &kp KP_PLUS   &kp N4  &kp N5  &kp N6  &kp KP_ASTERISK  &kp KP_EQUAL
-&trans        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp C_VOLUME_UP  &kp C_VOL_DN    &kp F11      &kp F12     &kp KP_MINUS  &kp N1  &kp N2  &kp N3  &kp KP_DIVIDE    &trans
-&trans        &trans        &trans        &bootloader   &mo_sl 2 2                  &trans           &trans          &mt LALT N0  &trans                    &to 0   &kp N0  &trans  &trans           &trans
+&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                       &trans        &trans  &kp KP_MULTIPLY  &trans        &trans           &trans
+&kp CAPSLOCK  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &bt BT_CLR                               &trans      &kp N6        &kp N7  &kp N8           &kp N9        &kp N0           &trans
+&trans        &td_f1_11     &td_f2_12     &kp F3        &kp F4        &kp F5        &sys_reset                               &sys_reset  &kp KP_PLUS   &kp N4  &kp N5           &kp N6        &kp KP_ASTERISK  &kp KP_EQUAL
+&trans        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp C_VOLUME_UP  &kp C_VOL_DN    &trans  &trans      &kp KP_MINUS  &kp N1  &htnr COMMA N2   &htnr DOT N3  &kp KP_DIVIDE    &trans
+&trans        &trans        &trans        &bootloader   &mo_sl 2 2                  &trans           &trans          &trans  &kp N0                    &to 0   &kp N0           &trans        &trans           &trans
             >;
 
             label = "Num";
