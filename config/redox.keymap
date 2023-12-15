@@ -38,13 +38,6 @@
             tapping-term-ms = <500>;
         };
 
-        td_shift_cw: td_shift_cw {
-            compatible = "zmk,behavior-tap-dance";
-            label = "Tap dance shift caps word";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
-        };
-
         td_f1_11: td_f1_11 {
             compatible = "zmk,behavior-tap-dance";
             label = "Tap dance F1 F11";
@@ -59,6 +52,21 @@
             bindings = <&kp F2>, <&kp F12>;
         };
 
+        ht_sk: ht_sk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold tap sticky key";
+            bindings = <&kp>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        td_shft_cw: td_shft_cw {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance shift caps word";
+            #binding-cells = <0>;
+            bindings = <&ht_sk LEFT_SHIFT LEFT_SHIFT>, <&caps_word>;
+        };
     };
 
     macros {
@@ -78,7 +86,7 @@
 &kp ESC                  &kp N1        &kp N2        &kp N3    &kp N4    &kp N5                                                    &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
 &kp TAB                  &kp Q         &kp W         &kp E     &kp R     &kp T   &kp DELETE                         &kp DELETE     &kp Y   &kp U      &kp I      &kp O     &kp P     &kp MINUS
 &mt LEFT_CONTROL ESCAPE  &kp A         &kp S         &kp D     &kp F     &kp G   &kp LBKT                           &kp RBKT       &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&td_shift_cw             &kp Z         &kp X         &kp C     &kp V     &kp B   &kp PG_UP   &kp PG_DN    &kp HOME  &kp END        &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RET
+&td_shft_cw              &kp Z         &kp X         &kp C     &kp V     &kp B   &kp PG_UP   &kp PG_DN    &kp HOME  &kp END        &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RET
 &kp LCTRL                &kp LEFT_GUI  &kp LEFT_ALT  &sk LGUI  &sk LALT          &kp SPACE   &td_osl      &kp ESC   &kp BACKSPACE          &sk LCTRL  &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
             >;
 
