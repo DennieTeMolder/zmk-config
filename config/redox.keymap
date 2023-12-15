@@ -20,6 +20,31 @@
             bindings = <&kpnr>, <&kp>;
         };
 
+        slsr: slsr {
+            compatible = "zmk,behavior-sticky-key";
+            label = "Sticky layer slow release";
+            bindings = <&mo>;
+            #binding-cells = <1>;
+            release-after-ms = <1500>;
+            ignore-modifiers;
+        };
+
+        td_osl: td_osl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance one shot layer";
+            #binding-cells = <0>;
+            bindings = <&slsr 2>, <&to 2>;
+
+            tapping-term-ms = <500>;
+        };
+
+        td_shift_cw: td_shift_cw {
+            compatible = "zmk,behavior-tap-dance";
+            label = "Tap dance shift caps word";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+        };
+
         td_f1_11: td_f1_11 {
             compatible = "zmk,behavior-tap-dance";
             label = "Tap dance F1 F11";
@@ -34,40 +59,6 @@
             bindings = <&kp F2>, <&kp F12>;
         };
 
-        slsr: slsr {
-            compatible = "zmk,behavior-sticky-key";
-            label = "Sticky layer slow release";
-            bindings = <&mo>;
-            #binding-cells = <1>;
-            release-after-ms = <2000>;
-            ignore-modifiers;
-        };
-
-        td_osl: td_osl {
-            compatible = "zmk,behavior-tap-dance";
-            label = "Tap dance one shot layer";
-            #binding-cells = <0>;
-            bindings = <&slsr 2>, <&to 2>;
-
-            tapping-term-ms = <300>;
-        };
-
-        td_shift_cw: td_shift_cw {
-            compatible = "zmk,behavior-tap-dance";
-            label = "Tap dance shift caps word";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
-        };
-
-        ht_to_slsr: ht_to_slsr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold tap to/sticky layer (slow release)";
-            bindings = <&to>, <&slsr>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-        };
     };
 
     macros {
