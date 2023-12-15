@@ -78,7 +78,7 @@
 &kp TAB                  &kp Q         &kp W         &kp E     &kp R     &kp T   &kp DELETE                         &kp DELETE     &kp Y   &kp U      &kp I      &kp O     &kp P     &kp MINUS
 &mt LEFT_CONTROL ESCAPE  &kp A         &kp S         &kp D     &kp F     &kp G   &kp LBKT                           &kp RBKT       &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
 &td_shift_cw             &kp Z         &kp X         &kp C     &kp V     &kp B   &kp PG_UP   &kp PG_DN    &kp HOME  &kp END        &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &mt RSHFT RET
-&kp LCTRL                &kp LEFT_GUI  &kp LEFT_ALT  &sk LGUI  &sk LALT          &kp SPACE   &kp ESC      &td_osl   &kp BACKSPACE          &sk LCTRL  &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
+&kp LCTRL                &kp LEFT_GUI  &kp LEFT_ALT  &sk LGUI  &sk LALT          &kp SPACE   &td_osl      &kp ESC   &kp BACKSPACE          &sk LCTRL  &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT
             >;
 
             label = "Default";
@@ -90,7 +90,7 @@
 &trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &bt BT_CLR                               &sys_reset    &kp N6     &kp N7       &kp N8           &kp N9                &kp N0                 &kp DEL
 &trans        &td_f1_11     &td_f2_12     &kp F3        &kp F4        &kp F5        &kp HOME                                 &kp END       &kp PLUS   &kp N4       &kp N5           &kp N6                &htnr KP_MULTIPLY N0   &kp EQUAL
 &trans        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &sys_reset  &bootloader    &kp C_VOL_DN  &kp C_VOL_UP  &kp MINUS  &kp N1       &htnr COMMA N2   &htnr DOT N3          &kp KP_DIVIDE          &trans
-&trans        &trans        &trans        &trans        &trans                      &trans      &to 0          &trans        &trans                   &trans       &trans           &trans                &trans                 &trans
+&trans        &trans        &trans        &trans        &trans                      &trans      &trans         &to 0         &trans                   &trans       &trans           &trans                &trans                 &trans
             >;
 
             label = "Num";
@@ -102,7 +102,7 @@
 &kp TILDE      &kp EXCL                  &kp AT     &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                     &kp F12  &kp CARET  &kp AMPERSAND      &kp STAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DELETE
 &mt LCTRL TAB  &kp PLUS                  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                    &kp END  &kp LEFT   &kp DOWN           &kp UP      &kp RIGHT             &kp ENTER              &kp LC(SPACE)
 &trans         &htnr PRINTSCREEN INSERT  &kp MINUS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &to 1     &trans    &trans  &trans   &kp N0     &kp DOUBLE_QUOTES  &kp UNDER   &kp PIPE              &kp BACKSLASH          &kp LC(ENTER)
-&trans         &trans                    &trans     &trans            &trans                          &trans    &to 1     &trans  &trans              &trans             &kp C_PREV  &kp C_PP              &kp C_NEXT             &to 3
+&trans         &trans                    &trans     &trans            &trans                          &trans    &to 2     &to 1   &trans              &trans             &kp C_PREV  &kp C_PP              &kp C_NEXT             &to 3
             >;
 
             label = "OSL";
@@ -110,11 +110,11 @@
 
         gaming_layer {
             bindings = <
-&trans  &trans     &trans  &trans  &trans  &trans                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp N6                   &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp T                    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp G   &kp B    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans          &trans  &to 0    &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans    &trans                                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TAB    &kp Q   &kp W   &kp E     &kp R   &kp N6                       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LSHFT  &kp A   &kp S   &kp D     &kp F   &kp T                        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LCTRL  &kp Z   &kp X   &kp C     &kp V   &kp G   &kp B        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &kp LALT          &trans  &kp LCTRL    &to 0   &trans          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "Game";
