@@ -47,9 +47,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "Tap dance one shot layer";
             #binding-cells = <0>;
-            bindings = <&slsr 2>, <&to 2>;
+            bindings = <&ht_to_sl 2 2>, <&to 1>, <&to 3>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
         };
 
         td_shift_cw: td_shift_cw {
@@ -57,6 +57,16 @@
             label = "Tap dance shift caps word";
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
+        };
+
+        ht_to_sl: ht_to_sl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold tap to sticky layer";
+            bindings = <&to>, <&slsr>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
         };
     };
 
@@ -86,11 +96,11 @@
 
         numpad_layer {
             bindings = <
-&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                         &kp CARET  &kp PERCENT  &kp KP_MULTIPLY  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &bt BT_CLR                               &sys_reset    &kp N6     &kp N7       &kp N8           &kp N9                &kp N0                 &kp DEL
-&trans        &td_f1_11     &td_f2_12     &kp F3        &kp F4        &kp F5        &kp HOME                                 &kp END       &kp PLUS   &kp N4       &kp N5           &kp N6                &htnr KP_MULTIPLY N0   &kp EQUAL
-&trans        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &sys_reset  &bootloader    &kp C_VOL_DN  &kp C_VOL_UP  &kp MINUS  &kp N1       &htnr COMMA N2   &htnr DOT N3          &kp KP_DIVIDE          &trans
-&trans        &trans        &trans        &trans        &trans                      &trans      &trans         &to 0         &trans                   &trans       &trans           &trans                &trans                 &trans
+&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                      &kp CARET  &kp PERCENT  &kp KP_MULTIPLY  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &bt BT_CLR                              &trans      &kp N6     &kp N7       &kp N8           &kp N9                &kp N0                 &trans
+&trans        &td_f1_11     &td_f2_12     &kp F3        &kp F4        &kp F5        &trans                                  &trans      &kp PLUS   &kp N4       &kp N5           &kp N6                &htnr KP_MULTIPLY N0   &kp EQUAL
+&trans        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &sys_reset  &bootloader    &bootloader  &sys_reset  &kp MINUS  &kp N1       &htnr COMMA N2   &htnr DOT N3          &kp KP_DIVIDE          &trans
+&trans        &trans        &trans        &trans        &trans                      &trans      &trans         &to 0        &trans                 &trans       &trans           &trans                &trans                 &trans
             >;
 
             label = "Num";
@@ -98,11 +108,11 @@
 
         one_shot_layer {
             bindings = <
-&kp GRAVE      &kp F1                    &kp F2     &kp F3            &kp F4             &kp F5                                            &kp F6     &kp F7             &kp F8      &kp F9                &kp F10                &kp DELETE
-&kp TILDE      &kp EXCL                  &kp AT     &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                     &kp F12  &kp CARET  &kp AMPERSAND      &kp STAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DELETE
-&mt LCTRL TAB  &kp PLUS                  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                    &kp END  &kp LEFT   &kp DOWN           &kp UP      &kp RIGHT             &kp ENTER              &kp LC(SPACE)
-&trans         &htnr PRINTSCREEN INSERT  &kp MINUS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &to 1     &trans    &trans  &trans   &kp N0     &kp DOUBLE_QUOTES  &kp UNDER   &kp PIPE              &kp BACKSLASH          &kp LC(ENTER)
-&trans         &trans                    &trans     &trans            &trans                          &trans    &to 2     &to 1   &trans              &trans             &kp C_PREV  &kp C_PP              &kp C_NEXT             &to 3
+&trans         &kp F1                    &kp F2     &kp F3            &kp F4             &kp F5                                                                       &kp F6     &kp F7             &kp F8      &kp F9                &kp F10                &kp DELETE
+&kp GRAVE      &kp EXCL                  &kp AT     &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                                        &kp F12          &kp CARET  &kp AMPERSAND      &kp STAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
+&mt LCTRL TAB  &kp PLUS                  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                                       &kp END          &kp LEFT   &kp DOWN           &kp UP      &kp RIGHT             &kp ENTER              &kp PLUS
+&trans         &htnr PRINTSCREEN INSERT  &kp MINUS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &kp ENTER  &kp LC(ENTER)    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp N0     &kp DOUBLE_QUOTES  &kp UNDER   &kp PIPE              &kp BACKSLASH          &trans
+&trans         &trans                    &trans     &trans            &trans                          &trans     &trans           &to 0              &trans                      &trans             &kp C_PREV  &kp C_PP              &kp C_NEXT             &to 1
             >;
 
             label = "OSL";
