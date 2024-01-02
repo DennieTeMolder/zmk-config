@@ -100,8 +100,8 @@
             bindings = <
 &trans         &kp F1     &kp F2     &kp F3            &kp F4             &kp F5                                                                          &kp F6     &kp F7             &kp F8      &kp F9                &kp F10                &kp DELETE
 &to 3          &kp EXCL   &kp AT     &kp POUND         &kp DOLLAR         &kp PERCENT  &kp F11                                           &kp F12          &kp CARET  &kp AMPERSAND      &kp STAR    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
-&mt LCTRL TAB  &kp ENTER  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                                          &kp END          &kp LEFT   &kp DOWN           &kp UP      &kp RIGHT             &kp ENTER              &kp PLUS
-&trans         &kp PLUS   &kp MINUS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &htnr PRINTSCREEN INSERT  &to 1     &kp C_VOL_DN  &kp C_VOLUME_UP  &kp N0     &kp DOUBLE_QUOTES  &kp UNDER   &kp PIPE              &kp BACKSLASH          &trans
+&mt LCTRL TAB  &kp ENTER  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE    &kp HOME                                          &kp END          &kp LEFT   &kp DOWN           &kp UP      &kp RIGHT             &kp ENTER              &trans
+&trans         &kp MINUS  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE    &htnr PRINTSCREEN INSERT  &to 1     &kp C_VOL_DN  &kp C_VOLUME_UP  &kp N0     &kp DOUBLE_QUOTES  &kp UNDER   &kp PIPE              &kp BACKSLASH          &trans
 &trans         &trans     &trans     &trans            &trans                          &trans                    &trans    &to 0         &trans                      &trans             &kp C_PREV  &kp C_PP              &kp C_NEXT             &to 1
             >;
 
