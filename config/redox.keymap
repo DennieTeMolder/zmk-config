@@ -33,7 +33,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "Tap dance one shot layer";
             #binding-cells = <0>;
-            bindings = <&slsr 2>, <&to 2>;
+            bindings = <&slsr 3>, <&to 3>;
 
             tapping-term-ms = <500>;
         };
