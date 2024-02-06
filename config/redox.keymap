@@ -63,15 +63,39 @@
             layers = <0 4>;
         };
 
-        combo_esc {
-            bindings = <&kp ESC>;
+        combo_lbrc {
+            bindings = <&kp LBRC>;
+            key-positions = <16 17>;
+            layers = <0 4>;
+        };
+
+        combo_lpar {
+            bindings = <&kp LPAR>;
+            key-positions = <30 31>;
+            layers = <0 4>;
+        };
+
+        combo_lbkt {
+            bindings = <&kp LBKT>;
+            key-positions = <44 45>;
+            layers = <0 4>;
+        };
+
+        combo_rbrc {
+            bindings = <&kp RBRC>;
+            key-positions = <20 21>;
+            layers = <0 4>;
+        };
+
+        combo_rpar {
+            bindings = <&kp RPAR>;
             key-positions = <34 35>;
             layers = <0 4>;
         };
 
-        combo_tab {
-            bindings = <&kp TAB>;
-            key-positions = <31 30>;
+        combo_rbkt {
+            bindings = <&kp RBKT>;
+            key-positions = <50 51>;
             layers = <0 4>;
         };
     };
