@@ -73,7 +73,7 @@
         clear_state: cancel_os_keys {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &kp F22>;
+            bindings = <&to 0 &kp F24>;
             label = "CANCEL_OS_KEYS";
         };
     };
