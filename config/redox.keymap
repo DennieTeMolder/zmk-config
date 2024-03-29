@@ -60,15 +60,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
-        mm_spc: mm_spc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Mod-morph space underscore";
-            bindings = <&kp SPACE>, <&kp UNDER>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
-        };
     };
 
     macros {
@@ -99,7 +90,7 @@
         combo_ret {
             bindings = <&kp RET>;
             key-positions = <30 29>;
-            layers = <0 4>;
+            layers = <0 4 1>;
         };
 
         combo_L0 {
@@ -116,7 +107,7 @@
         combo_esc_left {
             bindings = <&kp ESC>;
             key-positions = <43 42>;
-            layers = <0 4>;
+            layers = <0 4 1>;
         };
     };
 
@@ -137,11 +128,11 @@
 
         numpad_layer {
             bindings = <
-&trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PERCENT                                           &trans   &trans   &trans   &trans   &trans   &trans
-&trans  &kp EQUAL         &kp N7             &kp N8                &kp N9                 &kp CARET        &trans                       &trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans
-&trans  &kp PLUS          &kp N4             &kp N5                &kp N6                 &kp KP_MULTIPLY  &kp ENTER                    &trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans
-&trans  &kp MINUS         &kp N1             &kp N2                &kp N3                 &kp FSLH         &trans     &trans    &trans  &trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
-&trans  &trans            &htnr COMMA DOT    &kp N0                &trans                                  &trans     &trans    &trans  &trans           &trans   &trans   &trans   &trans   &trans
+&trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PERCENT                                        &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &kp EQUAL         &kp N7             &kp N8                &kp N9                 &kp CARET        &trans                    &trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans
+&trans  &kp PLUS          &kp N4             &kp N5                &kp N6                 &kp KP_MULTIPLY  &to 0                     &to 0   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans
+&trans  &kp MINUS         &kp N1             &kp N2                &kp N3                 &kp FSLH         &trans  &trans    &trans  &trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
+&trans  &trans            &htnr COMMA DOT    &kp N0                &trans                                  &trans  &trans    &trans  &trans           &trans   &trans   &trans   &trans   &trans
             >;
 
             label = "Num";
@@ -173,11 +164,11 @@
 
         symbol_layer {
             bindings = <
-&to 0   &kp F1     &kp F2    &kp F3     &kp F4      &kp F5                                                                       &kp F6     &kp F7         &kp F8     &kp F9     &kp F10        &kp UNDER
-&trans  &kp EXCL   &kp AT    &kp POUND  &kp DOLLAR  &kp PERCENT  &kp F11                                        &kp F12          &kp CARET  &kp AMPERSAND  &kp STAR   &kp LPAR   &kp RPAR       &kp DEL
-&trans  &kp PIPE   &kp PLUS  &kp MINUS  &kp EQUAL   &kp TILDE    &kp HOME                                       &kp END          &kp LEFT   &kp DOWN       &kp UP     &kp RIGHT  &kp COLON      &kp DOUBLE_QUOTES
-&trans  &kp GRAVE  &kp LT    &kp GT     &kp LPAR    &kp LBRC     &kp C_PREV  &htnr C_NEXT C_PP    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp RBRC   &kp RPAR       &kp LBKT   &kp RBKT   &kp BACKSLASH  &trans
-&trans  &trans     &trans    &trans     &trans                   &kp UNDER   &trans               &trans        &trans                      &trans         &kp PG_DN  &kp PG_UP  &kp INS        &kp PRINTSCREEN
+&to 0      &kp F1     &kp F2    &kp F3     &kp F4      &kp F5                                                                         &kp F6     &kp F7         &kp F8     &kp F9     &kp F10    &kp UNDER
+&kp GRAVE  &kp EXCL   &kp AT    &kp POUND  &kp DOLLAR  &kp PERCENT    &kp F11                                        &kp F12          &kp CARET  &kp AMPERSAND  &kp STAR   &kp LPAR   &kp RPAR   &kp DEL
+&trans     &kp PIPE   &kp PLUS  &kp MINUS  &kp EQUAL   &kp BACKSLASH  &to 1                                          &to 1            &kp LEFT   &kp DOWN       &kp UP     &kp RIGHT  &kp COLON  &kp DOUBLE_QUOTES
+&trans     &kp TILDE  &kp LT    &kp GT     &kp LPAR    &kp LBRC       &kp C_PREV  &htnr C_NEXT C_PP    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp RBRC   &kp RPAR       &kp LBKT   &kp RBKT   &kp QMARK  &trans
+&trans     &trans     &trans    &trans     &trans                     &kp UNDER   &trans               &trans        &trans                      &trans         &kp PG_DN  &kp PG_UP  &kp INS    &kp PRINTSCREEN
             >;
 
             label = "Sym";
@@ -187,7 +178,7 @@
             bindings = <
 &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                      &none   &none  &none       &none  &none  &none
 &none         &none         &none           &none         &none         &none         &bt BT_CLR                              &none       &none   &none  &kp INSERT  &none  &none  &none
-&none         &none         &kp SCROLLLOCK  &none         &to 1         &tog 2        &sys_reset                              &sys_reset  &tog 3  &to 1  &none       &none  &none  &none
+&none         &none         &kp SCROLLLOCK  &none         &none         &tog 2        &sys_reset                              &sys_reset  &tog 3  &none  &none       &none  &none  &none
 &none         &trans        &none           &kp CAPS      &none         &none         &none       &bootloader    &bootloader  &none       &none   &none  &none       &none  &none  &none
 &none         &none         &none           &none         &none                       &none       &none          &none        &none               &none  &none       &none  &none  &none
             >;
