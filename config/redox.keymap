@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -60,6 +59,24 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        esc_cstate: esc_cstate {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ESC clear state";
+            bindings = <&kp ESC>, <&to 0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+        };
+
+        cstate: cstate {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Clear state";
+            bindings = <&to 0>, <&to 0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+        };
     };
 
     macros {
@@ -68,13 +85,6 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "kp no repeat";
-        };
-
-        clear_state: clear_state {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 0 &kp F24>;
-            label = "CLEAR_STATE";
         };
     };
 
@@ -94,20 +104,20 @@
         };
 
         combo_L0 {
-            bindings = <&clear_state>;
+            bindings = <&cstate>;
             key-positions = <62 63>;
         };
 
         combo_esc_right {
-            bindings = <&kp ESC>;
+            bindings = <&esc_cstate>;
             key-positions = <52 53>;
-            layers = <0 4>;
+            layers = <0>;
         };
 
         combo_esc_left {
-            bindings = <&kp ESC>;
+            bindings = <&esc_cstate>;
             key-positions = <43 42>;
-            layers = <0 4 1>;
+            layers = <0>;
         };
 
         combo_home {
@@ -120,6 +130,18 @@
             bindings = <&kp END>;
             key-positions = <35 34>;
             layers = <0 4>;
+        };
+
+        combo_cstate_right {
+            bindings = <&cstate>;
+            key-positions = <52 53>;
+            layers = <4>;
+        };
+
+        combo_cstate_left {
+            bindings = <&cstate>;
+            key-positions = <43 42>;
+            layers = <4>;
         };
     };
 
