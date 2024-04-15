@@ -63,16 +63,7 @@
         esc_cstate: esc_cstate {
             compatible = "zmk,behavior-mod-morph";
             label = "ESC clear state";
-            bindings = <&kp ESC>, <&to 0>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
-        };
-
-        cstate: cstate {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Clear state";
-            bindings = <&to 0>, <&to 0>;
+            bindings = <&kp ESC>, <&clear_state>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
@@ -85,6 +76,13 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "kp no repeat";
+        };
+
+        clear_state: clear_state {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &kp F24>;
+            label = "CLEAR_STATE";
         };
     };
 
@@ -104,7 +102,7 @@
         };
 
         combo_L0 {
-            bindings = <&cstate>;
+            bindings = <&clear_state>;
             key-positions = <62 63>;
         };
 
@@ -133,13 +131,13 @@
         };
 
         combo_cstate_right {
-            bindings = <&cstate>;
+            bindings = <&clear_state>;
             key-positions = <52 53>;
             layers = <4>;
         };
 
         combo_cstate_left {
-            bindings = <&cstate>;
+            bindings = <&clear_state>;
             key-positions = <43 42>;
             layers = <4>;
         };
